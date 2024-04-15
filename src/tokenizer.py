@@ -1,4 +1,5 @@
 from nltk import word_tokenize, download
+from time import time
 import re
 
 class Tokenizer:
@@ -25,6 +26,7 @@ class Tokenizer:
     '''
     Tokenize a file and generate a vocabulary file with the words found in the file.
     '''
+    startTime = time()
     if verbose:
       print('Tokenizing file: ' + fileName)
     data = []
@@ -67,6 +69,8 @@ class Tokenizer:
       for word in listWords:
         file.write(word + '\n')
     if verbose:
+      finishTime = time()
       print('Tokenization finished on file: ' + outputFile)
+      print('Time elapsed: {:.2f} seconds'.format(finishTime - startTime))
     return fullData
     
