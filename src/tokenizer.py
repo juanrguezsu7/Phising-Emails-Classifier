@@ -6,6 +6,8 @@ class Tokenizer:
   '''
   Class to tokenize a file and generate a vocabulary file with the words found in the file.
   '''
+  FORBIDDEN_WORDS = ['<','>']
+  SPECIAL_WORDS = ['EMPTY', 'NON-ASCII']
 
   def __init__(self):
     '''
@@ -27,12 +29,18 @@ class Tokenizer:
     for i in data:
       i = i.split(delimiter)
       rawWords = word_tokenize(i[0])
+      finalWords = rawWords
       for word in rawWords:
+        if word in Tokenizer.FORBIDDEN_WORDS:
+          continue
+        if word in Tokenizer.SPECIAL_WORDS:
+          finalWords = ['<' + word + '>']
+          word = '<' + word + '>'
         if word in words:
           words[word] += 1
         else:
           words[word] = 1
-      tokenisedData.append([rawWords, i[1].replace('\n', '')])
+      tokenisedData.append([finalWords, i[1].replace('\n', '')])
     listWords = list(words.keys())
     listWords.sort()
     with open(outputFile, 'w', encoding = 'utf8') as file:

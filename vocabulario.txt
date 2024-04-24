@@ -1,4 +1,6 @@
-Numero de palabras: 138260
+Numero de palabras: 138262
+<EMPTY>
+<NON-ASCII>
 aa
 aaa
 aaaaanyway

@@ -99,4 +99,4 @@ class WordProbabilities:
       sortedWords = sorted(self.wordProbabilities.keys())
       for word in sortedWords:
         prob = log(self.wordProbabilities[word][className] / self.getWordsClassified()[className])
-        file.write('Palabra: {0} Frec: {1} LogProb: {2}\n'.format(word, self.wordProbabilities[word][className], prob))
+        file.write('Palabra: {0} Frec: {1} LogProb: {2:.2f}\n'.format(word, self.wordProbabilities[word][className], prob))

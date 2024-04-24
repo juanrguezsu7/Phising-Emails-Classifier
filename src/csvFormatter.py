@@ -37,7 +37,6 @@ class CSVFormatter:
       id = re.sub(r'\n\d*', '', id)
       fullData.append([data[i + 1], id])
     finalData = []
-    deleted = 0
     for i in fullData:
       content = i[0]
       content = content.lower()
@@ -48,11 +47,9 @@ class CSVFormatter:
       content = re.sub(r'\s+', ' ', content)
       content = content.strip()
       if len(content) == 0:
-        deleted += 1
-        continue
+        content = '<EMPTY>'
       if not content.isascii():
-        deleted += 1
-        continue
+        content = '<NON-ASCII>'
       finalData.append([content, i[1]])
     with open(outputFile, 'w', encoding = 'utf8') as file:
       for i in finalData:
@@ -60,5 +57,4 @@ class CSVFormatter:
     if verbose:
       finishTime = time()
       print('Formatting CSV file finished on file: ' + outputFile)
-      print('Deleted rows: ' + str(deleted))
       print('Time elapsed: {:.2f} seconds'.format(finishTime - startTime))

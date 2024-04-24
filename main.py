@@ -4,11 +4,11 @@ from src.wordProbabilities import WordProbabilities
 
 ### CSV FORMATTER ###
 # csvFormatter = CSVFormatter()
-# csvFormatter.format('data/PH_train.csv', 'data/PH_train_formatted.csv', ';', True)
+# csvFormatter.format('data/PH_train.csv', 'data/PH_train_formatted2.csv', ';', True)
 
 ### TOKENIZER ###
 tokenizer = Tokenizer()
-data = tokenizer.tokenize('data/PH_train_formatted.csv', ';', 'vocabulario.txt', True)
+data = tokenizer.tokenize('data/PH_train_formatted2.csv', ';', 'vocabulario.txt', True)
 
 wordProbabilities = WordProbabilities(tokenizer.getVocabularySize())
 wordProbabilities.calculateWordProbabilities(data)
