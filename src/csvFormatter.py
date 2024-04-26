@@ -43,7 +43,7 @@ class CSVFormatter:
       for regex in CSVFormatter.CLEAN_REGEXS:
         content = re.sub(regex, '', content)
       stopWordsRegex = '|'.join(CSVFormatter.STOP_WORDS)
-      content = re.sub(r'\b(' + stopWordsRegex + r')\b', '', content)
+      content = re.sub(r'\b(' + stopWordsRegex + r')\b', ' ', content)
       content = re.sub(r'\s+', ' ', content)
       content = content.strip()
       if len(content) == 0:

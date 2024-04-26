@@ -1,6 +1,5 @@
 from nltk import word_tokenize, download
 from time import time
-import re
 
 class Tokenizer:
   '''

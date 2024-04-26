@@ -93,7 +93,7 @@ class WordProbabilities:
     '''
     Dump the word probabilities to a file.
     '''
-    with open(filename, 'w') as file:
+    with open(filename, 'w', encoding = 'utf8') as file:
       file.write('Numero de documentos (noticias) del corpus: {0}\n'.format(self.getEntriesClassified()[className]))
       file.write('Numero de palabras del corpus: {0}\n'.format(self.getWordsClassified()[className]))
       sortedWords = sorted(self.wordProbabilities.keys())
