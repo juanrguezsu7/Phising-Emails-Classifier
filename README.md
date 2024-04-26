@@ -12,3 +12,9 @@ Este proyecto consiste en la creación de un modelo de aprendizaje automático q
 ## Dependencias
 - [Python 3.12](https://www.python.org/downloads/release/python-3120/) Para ejecutar el código.
 - [NLTK](https://www.nltk.org/) Para procesar las frases y separarlas en palabras.
+
+## Ejemplo de uso
+```bash
+python main.py modelo_lenguaje_S.txt modelo_lenguaje_P.txt emails.csv
+```
+Donde `modelo_lenguaje_S.txt` y `modelo_lenguaje_P.txt` son los modelos de lenguaje para correos legítimos y de phishing respectivamente, y `emails.csv` es el dataset de correos electrónicos (uno por línea).
