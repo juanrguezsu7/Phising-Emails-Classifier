@@ -56,4 +56,4 @@ def comparePredictions(predictionFilename, correctFilename):
   print('Accuracy: {:.2f}%'.format(correctCounter / len(predictions) * 100))
 
 #divideDataset('data/PH_train.csv', 15000, 'PH_train_1_test.csv', 'delete.csv', False, True)
-comparePredictions('resumen_alu0101477596.csv', 'PH_train_1.csv')
+comparePredictions('resumen_alu0101477596.csv', 'models/10000-5000/PH_train_2.csv')

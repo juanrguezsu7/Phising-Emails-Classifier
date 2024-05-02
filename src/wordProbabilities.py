@@ -1,7 +1,7 @@
 from math import log
 
 class WordProbabilities:
-  CLASSES_NAMES = ['Safe Email', 'Phishing Email']  
+  CLASSES_NAMES = ['Safe Email', 'Phishing Email']
 
   def __init__(self, vocabularySize):
     self.wordProbabilities = {}
@@ -52,6 +52,7 @@ class WordProbabilities:
     for word in self.wordProbabilities:
       for className in WordProbabilities.CLASSES_NAMES:
         self.wordProbabilities[word][className] += 1
+        self.totalWords[className] += 1
 
   def getTotalWords(self):
     '''
